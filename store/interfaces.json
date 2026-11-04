@@ -1,0 +1,487 @@
+{
+  "product-summary": {
+    "component": "ProductSummary",
+    "composition": "wrap",
+    "render": "client",
+    "allowed": [
+      "product-summary-name",
+      "product-summary-price",
+      "product-summary-image",
+      "product-summary-add-to-cart",
+      "product-summary-buy-button",
+      "product-summary-specifications",
+      "product-summary-short-description"
+    ],
+    "required": [
+      "product-summary-name",
+      "product-summary-price",
+      "product-summary-image"
+    ],
+    "around": [
+      "product-summary-wrapper"
+    ],
+    "around_1": [
+      "product-summary-container"
+    ],
+    "schema": {
+      "type": "object",
+      "properties": {
+        "showName": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar nombre del producto"
+        },
+        "showPrice": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar precio"
+        },
+        "showImage": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar imagen"
+        },
+        "showAddToCart": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar botón agregar al carrito"
+        },
+        "showBuyButton": {
+          "type": "boolean",
+          "default": false,
+          "title": "Mostrar botón comprar ahora"
+        },
+        "showSpecifications": {
+          "type": "boolean",
+          "default": false,
+          "title": "Mostrar especificaciones"
+        },
+        "showShortDescription": {
+          "type": "boolean",
+          "default": false,
+          "title": "Mostrar descripción corta"
+        },
+        "nameLabel": {
+          "type": "string",
+          "default": "",
+          "title": "Etiqueta personalizada para el nombre"
+        },
+        "priceContainerClass": {
+          "type": "string",
+          "default": "",
+          "title": "Clase CSS adicional para el contenedor de precio"
+        },
+        "imageContainerClass": {
+          "type": "string",
+          "default": "",
+          "title": "Clase CSS adicional para el contenedor de imagen"
+        },
+        "displayMode": {
+          "type": "string",
+          "enum": [
+            "horizontal",
+            "vertical",
+            "grid"
+          ],
+          "default": "vertical",
+          "title": "Modo de visualización"
+        },
+        "showBadge": {
+          "type": "boolean",
+          "default": false,
+          "title": "Mostrar insignia de descuento"
+        },
+        "badgeText": {
+          "type": "string",
+          "default": "OFF",
+          "title": "Texto de la insignia"
+        },
+        "badgeColor": {
+          "type": "string",
+          "default": "#ff0000",
+          "title": "Color de la insignia"
+        },
+        "showStock": {
+          "type": "boolean",
+          "default": false,
+          "title": "Mostrar disponibilidad de stock"
+        },
+        "lowStockThreshold": {
+          "type": "number",
+          "default": 10,
+          "title": "Umbral de stock bajo"
+        },
+        "showInstallments": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar información de cuotas"
+        },
+        "installmentsColor": {
+          "type": "string",
+          "default": "#666666",
+          "title": "Color del texto de cuotas"
+        },
+        "hoverImageEnabled": {
+          "type": "boolean",
+          "default": false,
+          "title": "Habilitar cambio de imagen al pasar el cursor"
+        }
+      }
+    }
+  },
+  "product-details": {
+    "component": "ProductDetails",
+    "composition": "wrap",
+    "render": "client",
+    "allowed": [
+      "product-name",
+      "product-price",
+      "product-images",
+      "product-description",
+      "product-specifications",
+      "product-reviews",
+      "product-availability",
+      "product-quantity",
+      "add-to-cart-button",
+      "buy-button",
+      "share-button",
+      "shipping-calculator",
+      "product-attachments"
+    ],
+    "required": [
+      "product-name",
+      "product-price",
+      "product-images",
+      "add-to-cart-button"
+    ],
+    "before": [
+      "product-details-header"
+    ],
+    "after": [
+      "product-details-footer"
+    ],
+    "around": [
+      "product-details-wrapper"
+    ],
+    "schema": {
+      "type": "object",
+      "properties": {
+        "showName": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar nombre del producto"
+        },
+        "showPrice": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar precio"
+        },
+        "showDescription": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar descripción"
+        },
+        "descriptionType": {
+          "type": "string",
+          "enum": [
+            "full",
+            "short",
+            "html"
+          ],
+          "default": "full",
+          "title": "Tipo de descripción a mostrar"
+        },
+        "showImages": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar galería de imágenes"
+        },
+        "imagesType": {
+          "type": "string",
+          "enum": [
+            "carousel",
+            "thumbnails",
+            "zoom"
+          ],
+          "default": "carousel",
+          "title": "Tipo de galería de imágenes"
+        },
+        "showSpecifications": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar especificaciones técnicas"
+        },
+        "specificationsPosition": {
+          "type": "string",
+          "enum": [
+            "above",
+            "below",
+            "tab"
+          ],
+          "default": "tab",
+          "title": "Posición de las especificaciones"
+        },
+        "showReviews": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar reseñas"
+        },
+        "showAvailability": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar disponibilidad"
+        },
+        "showQuantity": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar selector de cantidad"
+        },
+        "minQuantity": {
+          "type": "number",
+          "default": 1,
+          "title": "Cantidad mínima seleccionable"
+        },
+        "maxQuantity": {
+          "type": "number",
+          "default": 10,
+          "title": "Cantidad máxima seleccionable"
+        },
+        "showAddToCart": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar botón agregar al carrito"
+        },
+        "showBuyButton": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar botón comprar ahora"
+        },
+        "showShareButton": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar botón compartir"
+        },
+        "showShippingCalculator": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar calculadora de envío"
+        },
+        "showAttachments": {
+          "type": "boolean",
+          "default": false,
+          "title": "Mostrar adjuntos del producto"
+        },
+        "showInstallments": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar información de cuotas"
+        },
+        "installmentsCount": {
+          "type": "number",
+          "default": 10,
+          "title": "Cantidad máxima de cuotas a mostrar"
+        },
+        "showDiscount": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar porcentaje de descuento"
+        },
+        "showSKU": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar SKU"
+        },
+        "showBrand": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar marca"
+        },
+        "showCollections": {
+          "type": "boolean",
+          "default": false,
+          "title": "Mostrar colecciones"
+        },
+        "galleryArrowPosition": {
+          "type": "string",
+          "enum": [
+            "inside",
+            "outside",
+            "none"
+          ],
+          "default": "inside",
+          "title": "Posición de las flechas de galería"
+        },
+        "galleryZoomFactor": {
+          "type": "number",
+          "default": 2,
+          "title": "Factor de zoom de imagen"
+        },
+        "priceContainerClass": {
+          "type": "string",
+          "default": "",
+          "title": "Clase CSS adicional para el contenedor de precio"
+        },
+        "nameContainerClass": {
+          "type": "string",
+          "default": "",
+          "title": "Clase CSS adicional para el contenedor de nombre"
+        },
+        "descriptionContainerClass": {
+          "type": "string",
+          "default": "",
+          "title": "Clase CSS adicional para el contenedor de descripción"
+        },
+        "tabbedDescription": {
+          "type": "boolean",
+          "default": true,
+          "title": "Usar pestañas para descripción y especificaciones"
+        },
+        "descriptionTabLabel": {
+          "type": "string",
+          "default": "Descripción",
+          "title": "Etiqueta de pestaña de descripción"
+        },
+        "specificationsTabLabel": {
+          "type": "string",
+          "default": "Especificaciones",
+          "title": "Etiqueta de pestaña de especificaciones"
+        },
+        "reviewsTabLabel": {
+          "type": "string",
+          "default": "Reseñas",
+          "title": "Etiqueta de pestaña de reseñas"
+        },
+        "customNameTag": {
+          "type": "string",
+          "default": "h1",
+          "title": "Etiqueta HTML para el nombre"
+        },
+        "priceHighlight": {
+          "type": "boolean",
+          "default": false,
+          "title": "Resaltar el precio"
+        },
+        "highlightColor": {
+          "type": "string",
+          "default": "#ff0000",
+          "title": "Color de resaltado"
+        },
+        "showStockManagement": {
+          "type": "boolean",
+          "default": true,
+          "title": "Mostrar gestión de stock"
+        },
+        "lowStockMessage": {
+          "type": "string",
+          "default": "¡Últimas unidades!",
+          "title": "Mensaje de stock bajo"
+        },
+        "outOfStockMessage": {
+          "type": "string",
+          "default": "Agotado",
+          "title": "Mensaje de agotado"
+        }
+      }
+    }
+  },
+  "product-summary-name": {
+    "component": "ProductSummaryName",
+    "render": "client"
+  },
+  "product-summary-price": {
+    "component": "ProductSummaryPrice",
+    "render": "client"
+  },
+  "product-summary-image": {
+    "component": "ProductSummaryImage",
+    "render": "client"
+  },
+  "product-summary-add-to-cart": {
+    "component": "ProductSummaryAddToCart",
+    "render": "client"
+  },
+  "product-summary-buy-button": {
+    "component": "ProductSummaryBuyButton",
+    "render": "client"
+  },
+  "product-summary-specifications": {
+    "component": "ProductSummarySpecifications",
+    "render": "client"
+  },
+  "product-summary-short-description": {
+    "component": "ProductSummaryShortDescription",
+    "render": "client"
+  },
+  "product-summary-wrapper": {
+    "component": "ProductSummaryWrapper",
+    "render": "client"
+  },
+  "product-summary-container": {
+    "component": "ProductSummaryContainer",
+    "render": "client"
+  },
+  "product-name": {
+    "component": "ProductName",
+    "render": "client"
+  },
+  "product-price": {
+    "component": "ProductPrice",
+    "render": "client"
+  },
+  "product-images": {
+    "component": "ProductImages",
+    "render": "client"
+  },
+  "product-description": {
+    "component": "ProductDescription",
+    "render": "client"
+  },
+  "product-specifications": {
+    "component": "ProductSpecifications",
+    "render": "client"
+  },
+  "product-reviews": {
+    "component": "ProductReviews",
+    "render": "client"
+  },
+  "product-availability": {
+    "component": "ProductAvailability",
+    "render": "client"
+  },
+  "product-quantity": {
+    "component": "ProductQuantity",
+    "render": "client"
+  },
+  "add-to-cart-button": {
+    "component": "AddToCartButton",
+    "render": "client"
+  },
+  "buy-button": {
+    "component": "BuyButton",
+    "render": "client"
+  },
+  "share-button": {
+    "component": "ShareButton",
+    "render": "client"
+  },
+  "shipping-calculator": {
+    "component": "ShippingCalculator",
+    "render": "client"
+  },
+  "product-attachments": {
+    "component": "ProductAttachments",
+    "render": "client"
+  },
+  "product-details-header": {
+    "component": "ProductDetailsHeader",
+    "render": "client"
+  },
+  "product-details-footer": {
+    "component": "ProductDetailsFooter",
+    "render": "client"
+  },
+  "product-details-wrapper": {
+    "component": "ProductDetailsWrapper",
+    "render": "client"
+  }
+}

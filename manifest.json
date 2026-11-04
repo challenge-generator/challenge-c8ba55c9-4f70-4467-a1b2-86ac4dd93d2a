@@ -1,0 +1,40 @@
+{
+  "vendor": "vtex",
+  "name": "product-refactor",
+  "version": "1.0.0",
+  "builders": {
+    "react": "4.x",
+    "styles": "2.x",
+    "store": "4.x"
+  },
+  "scripts": {
+    "lint": "vtex lint",
+    "build": "vtex build",
+    "prepublish": "vtex publish --verbose"
+  },
+  "policies": [
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "api.vtex.com",
+        "path": "/vtex/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "portal.vtexcommercestaged.com",
+        "path": "/api/*"
+      }
+    }
+  ],
+  "dependencies": {
+    "vtex.store-components": "3.x",
+    "vtex.styleguide": "9.x",
+    "@vtex/api": "1.x"
+  },
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
+}

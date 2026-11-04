@@ -1,0 +1,238 @@
+{
+  "product-summary": {
+    "children": [
+      "product-summary-wrapper",
+      "product-summary-container",
+      "product-summary-image",
+      "product-summary-name",
+      "product-summary-price",
+      "product-summary-short-description",
+      "product-summary-specifications",
+      "product-summary-add-to-cart",
+      "product-summary-buy-button"
+    ],
+    "props": {
+      "showName": true,
+      "showPrice": true,
+      "showImage": true,
+      "showAddToCart": true,
+      "showBuyButton": false,
+      "showSpecifications": false,
+      "showShortDescription": false,
+      "displayMode": "vertical",
+      "showBadge": false,
+      "showStock": false,
+      "showInstallments": true,
+      "hoverImageEnabled": false,
+      "lowStockThreshold": 10,
+      "badgeText": "OFF",
+      "badgeColor": "#ff0000",
+      "installmentsColor": "#666666"
+    }
+  },
+  "product-summary-wrapper": {
+    "children": [
+      "product-summary-container"
+    ],
+    "props": {
+      "wrapWhole": false,
+      "className": "product-summary-wrapper-container"
+    }
+  },
+  "product-summary-container": {
+    "children": [
+      "flex-layout.row#product-summary-main",
+      "flex-layout.row#product-summary-secondary"
+    ],
+    "props": {
+      "blockClass": "product-summary-container",
+      "preserveLayoutOnMobile": true,
+      "fullWidth": false
+    }
+  },
+  "flex-layout.row#product-summary-main": {
+    "children": [
+      "flex-layout.col#product-summary-image",
+      "flex-layout.col#product-summary-info"
+    ],
+    "props": {
+      "blockClass": "product-summary-main-row",
+      "colGap": 3,
+      "rowGap": 3,
+      "marginBottom": 4,
+      "marginTop": 4,
+      "fullWidth": false
+    }
+  },
+  "flex-layout.col#product-summary-image": {
+    "children": [
+      "product-summary-image"
+    ],
+    "props": {
+      "blockClass": "product-summary-image-col",
+      "width": "grow",
+      "verticalAlign": "middle"
+    }
+  },
+  "flex-layout.col#product-summary-info": {
+    "children": [
+      "flex-layout.row#product-summary-name",
+      "flex-layout.row#product-summary-price",
+      "flex-layout.row#product-summary-description"
+    ],
+    "props": {
+      "blockClass": "product-summary-info-col",
+      "width": "grow",
+      "verticalAlign": "middle"
+    }
+  },
+  "flex-layout.row#product-summary-name": {
+    "children": [
+      "product-summary-name"
+    ],
+    "props": {
+      "blockClass": "product-summary-name-row",
+      "marginBottom": 2
+    }
+  },
+  "flex-layout.row#product-summary-price": {
+    "children": [
+      "product-summary-price"
+    ],
+    "props": {
+      "blockClass": "product-summary-price-row",
+      "marginBottom": 2
+    }
+  },
+  "flex-layout.row#product-summary-description": {
+    "children": [
+      "product-summary-short-description"
+    ],
+    "props": {
+      "blockClass": "product-summary-description-row",
+      "marginBottom": 3,
+      "show": "mobile-only"
+    }
+  },
+  "flex-layout.row#product-summary-secondary": {
+    "children": [
+      "flex-layout.col#product-summary-actions"
+    ],
+    "props": {
+      "blockClass": "product-summary-secondary-row",
+      "marginTop": 3
+    }
+  },
+  "flex-layout.col#product-summary-actions": {
+    "children": [
+      "product-summary-add-to-cart",
+      "product-summary-buy-button"
+    ],
+    "props": {
+      "blockClass": "product-summary-actions-col",
+      "horizontalAlign": "center",
+      "verticalAlign": "middle"
+    }
+  },
+  "product-summary-image": {
+    "props": {
+      "showBadge": true,
+      "badgeText": "OFF",
+      "badgeColor": "#ff0000",
+      "aspectRatio": {
+        "desktop": "auto",
+        "mobile": "auto"
+      },
+      "maxHeight": 300,
+      "sizes": [
+        {
+          "image": "$",
+          "size": "40vw",
+          "media": "(max-width: 768px)"
+        },
+        {
+          "image": "$",
+          "size": "20vw"
+        }
+      ],
+      "hoverImageEnabled": false,
+      "placeholder": "assets/placeholder@2x.png",
+      "alt": "$",
+      "className": "product-summary-image-element"
+    }
+  },
+  "product-summary-name": {
+    "props": {
+      "showBrandName": false,
+      "showSku": false,
+      "tag": "h2",
+      "className": "product-summary-name-element",
+      "textAlign": "left",
+      "fontScale": 1.2
+    }
+  },
+  "product-summary-price": {
+    "props": {
+      "showListPrice": true,
+      "showSellingPrice": true,
+      "showInstallments": true,
+      "showDiscountPercentage": true,
+      "showLabels": false,
+      "showSavings": true,
+      "savingsMode": "percentage",
+      "sellingPriceLabel": "$",
+      "listPriceLabel": "$",
+      "installmentsLabel": "ou $",
+      "className": "product-summary-price-element",
+      "containerClass": "price-container"
+    }
+  },
+  "product-summary-short-description": {
+    "props": {
+      "show": true,
+      "maxLength": 150,
+      "className": "product-summary-short-description-element"
+    }
+  },
+  "product-summary-specifications": {
+    "props": {
+      "show": false,
+      "specifications": [
+        {
+          "name": "Marca",
+          "specificationGroup": "Technical"
+        },
+        {
+          "name": "Modelo",
+          "specificationGroup": "Technical"
+        }
+      ],
+      "className": "product-summary-specifications-element"
+    }
+  },
+  "product-summary-add-to-cart": {
+    "props": {
+      "showAddToCartButton": true,
+      "showToast": true,
+      "customPixelEventId": "add-to-cart-pixel",
+      "customPixelEventName": "addToCart",
+      "onAddToCartFailed": "ALERT",
+      "addToCartButtonProps": {
+        "customClass": "product-summary-add-to-cart-button",
+        "size": "regular",
+        "align": "center"
+      },
+      "text": "Agregar al carrito",
+      "loading": false
+    }
+  },
+  "product-summary-buy-button": {
+    "props": {
+      "displayMode": "buy-button",
+      "customClass": "product-summary-buy-button-element",
+      "alignment": "center",
+      "isOnClickCallToAction": false,
+      "text": "Comprar ahora"
+    }
+  }
+}

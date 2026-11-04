@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["react/*"],
+      "styles/*": ["styles/*"],
+      "store/*": ["store/*"]
+    },
+    "types": ["vtex.types", "node"],
+    "noEmit": true
+  },
+  "include": [
+    "react/**/*",
+    "store/**/*",
+    "styles/**/*",
+    "manifest.json"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ]
+}
